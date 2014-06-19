@@ -27,7 +27,7 @@
  
  	act_info_ = new IconAction(tr("User Info"), "psi/vCard", tr("User Info"), 0, this);
  	connect(act_info_, SIGNAL(triggered()), SLOT(doInfo()));
-@@ -784,16 +785,44 @@ void PsiChatDlg::updatePGP()
+@@ -784,15 +785,42 @@ void PsiChatDlg::updatePGP()
  		act_pgp_->setEnabled(true);
  	}
  	else {
@@ -41,7 +41,6 @@
  	ui_.tb_pgp->setVisible(account()->hasPGP() &&
  						   !smallChat_ &&
  						   !PsiOptions::instance()->getOption("options.ui.chat.central-toolbar").toBool());
- 	ui_.log->setEncryptionEnabled(isEncryptionEnabled());
  }
  
 +void PsiChatDlg::checkPGPAutostart()
@@ -67,7 +66,6 @@
 +void PsiChatDlg::actPgpToggled(bool b)
 +{
 +	autoPGP_ = false;
-+	ui_.log->setEncryptionEnabled(b);
 +}
 +
  void PsiChatDlg::doClearButton()

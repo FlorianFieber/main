@@ -1468,18 +1468,18 @@
  						   !smallChat_ &&
 -						   !PsiOptions::instance()->getOption("options.ui.chat.central-toolbar").toBool());
 +						   !PsiOptions::instance()->getOption("options.ui.contactlist.toolbars.m0.visible").toBool());
- 	ui_.log->setEncryptionEnabled(isEncryptionEnabled());
  }
  
+ void PsiChatDlg::doClearButton()
 @@ -849,7 +877,7 @@ void PsiChatDlg::doClearButton()
  
  void PsiChatDlg::setPGPEnabled(bool enabled)
  {
 -	act_pgp_->setChecked(enabled);
 +	actions_->action("chat_pgp")->setChecked(enabled);
- 	ui_.log->setEncryptionEnabled(enabled);
  }
  
+ void PsiChatDlg::toggleSmallChat()
 @@ -863,22 +891,22 @@ void PsiChatDlg::buildMenu()
  {
  	// Dialog menu
